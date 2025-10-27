@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="MauiApp4.Views.NewEventPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ctrl="clr-namespace:MauiApp4.Controls"
+    xmlns:local="clr-namespace:MauiApp4"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    Padding="{OnPlatform iOS={StaticResource ApplePadding},
+                         Default={StaticResource DefaultPadding}}"
+    Shell.PresentationMode="ModalAnimated"
+    Title="New Event"
+    mc:Ignorable="d">
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry
+                Text=""
+                Placeholder="Event name"
+                MaxLength="100" />
+            <Entry
+                Text=""
+                Placeholder="Location"
+                MaxLength="100" />
+            <ctrl:DateTimePicker
+                x:Name="start"
+                MinimumDate="{x:Static sys:DateTime.Now}"
+                Title="Start:" />
+            <ctrl:DateTimePicker
+                x:Name="end"
+                MinimumDate="{x:Static sys:DateTime.Now}"
+                Title="End:" />
+            <Editor
+                Text=""
+                HeightRequest="100"
+                Placeholder="Notes"
+                MaxLength="500" />
+            <HorizontalStackLayout HorizontalOptions="Center">
+                <Button
+                    Clicked="OnSave"
+                    Style="{StaticResource PrimaryAction}"
+                    Text="Save" />
+                <Button
+                    Clicked="OnCancel"
+                    Style="{StaticResource Action}"
+                    Text="Cancel" />
+            </HorizontalStackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
