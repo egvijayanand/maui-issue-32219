@@ -1,6 +1,6 @@
 <Project>
     <PropertyGroup>
         <ManagePackageVersionsCentrally>false</ManagePackageVersionsCentrally>
-        <MauiVersion>9.0.111</MauiVersion>
+        <MauiVersion>9.0.120</MauiVersion>
     </PropertyGroup>
 </Project>
